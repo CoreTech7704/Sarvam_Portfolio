@@ -28,7 +28,12 @@ export default function Hero() {
       <motion.div
         className="absolute bottom-1/4 -right-60 w-[500px] h-[500px] bg-cyan-500/15 rounded-full blur-[140px]"
         animate={{ scale: [1.15, 1, 1.15], opacity: [0.3, 0.5, 0.3] }}
-        transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        transition={{
+          duration: 9,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1,
+        }}
       />
 
       <div className="max-w-6xl w-full mx-auto relative z-10">
@@ -81,7 +86,11 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="text-gray-300 text-lg leading-relaxed mb-10 max-w-lg"
             >
-Full Stack Developer focused on building modern web applications with React, Next.js and Node.js. Passionate about Linux, system architecture, networking and creating reliable software solutions.            </motion.p>
+              Full Stack Developer focused on building modern web applications
+              with React, Next.js and Node.js. Passionate about Linux, system
+              architecture, networking and creating reliable software
+              solutions.{" "}
+            </motion.p>
 
             {/* CTAs */}
             <motion.div
@@ -119,7 +128,14 @@ Full Stack Developer focused on building modern web applications with React, Nex
               transition={{ duration: 0.8, delay: 0.9 }}
               className="flex flex-wrap gap-2 mt-10"
             >
-              {["React", "Next.js", "TypeScript", "Node.js", "PostgreSQL", "Linux"].map((tech, i) => (
+              {[
+                "React",
+                "Next.js",
+                "TypeScript",
+                "Node.js",
+                "PostgreSQL",
+                "Linux",
+              ].map((tech, i) => (
                 <span
                   key={tech}
                   className="px-3 py-1 text-xs text-gray-400 bg-white/5 border border-white/10 rounded-full"
@@ -148,7 +164,9 @@ Full Stack Developer focused on building modern web applications with React, Nex
                   <div className="w-3 h-3 rounded-full bg-red-400/70" />
                   <div className="w-3 h-3 rounded-full bg-yellow-400/70" />
                   <div className="w-3 h-3 rounded-full bg-green-400/70" />
-                  <span className="ml-3 text-xs text-gray-500 font-mono">portfolio.ts</span>
+                  <span className="ml-3 text-xs text-gray-500 font-mono">
+                    portfolio.ts
+                  </span>
                 </div>
 
                 {/* Code content */}
@@ -161,15 +179,26 @@ Full Stack Developer focused on building modern web applications with React, Nex
                       transition={{ duration: 0.4, delay: 0.6 + i * 0.12 }}
                       className="flex items-center gap-3 mb-1"
                     >
-                      <span className="text-gray-600 select-none w-4 text-right shrink-0">{i + 1}</span>
+                      <span className="text-gray-600 select-none w-4 text-right shrink-0">
+                        {i + 1}
+                      </span>
                       <span
                         className="text-gray-300"
                         style={{ paddingLeft: line.indent * 16 }}
                         dangerouslySetInnerHTML={{
                           __html: line.text
-                            .replace(/"([^"]+)"/g, '<span class="text-cyan-300">"$1"</span>')
-                            .replace(/\[([^\]]+)\]/g, '<span class="text-blue-300">[$1]</span>')
-                            .replace(/\b(const|true)\b/g, '<span class="text-purple-400">$1</span>')
+                            .replace(
+                              /"([^"]+)"/g,
+                              '<span class="text-cyan-300">"$1"</span>',
+                            )
+                            .replace(
+                              /\[([^\]]+)\]/g,
+                              '<span class="text-blue-300">[$1]</span>',
+                            )
+                            .replace(
+                              /\b(const|true)\b/g,
+                              '<span class="text-purple-400">$1</span>',
+                            ),
                         }}
                       />
                     </motion.div>
@@ -181,7 +210,9 @@ Full Stack Developer focused on building modern web applications with React, Nex
                     animate={{ opacity: [1, 0, 1] }}
                     transition={{ duration: 1.2, repeat: Infinity }}
                   >
-                    <span className="text-gray-600 w-4 text-right text-sm shrink-0">7</span>
+                    <span className="text-gray-600 w-4 text-right text-sm shrink-0">
+                      7
+                    </span>
                     <span className="w-2 h-4 bg-blue-400 rounded-sm" />
                   </motion.div>
                 </div>
