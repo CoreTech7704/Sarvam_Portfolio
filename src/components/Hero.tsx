@@ -58,10 +58,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <span className="block bg-gradient-to-r from-white via-blue-100 to-cyan-200 bg-clip-text text-transparent">
-                Sarvam
-              </span>
-              <span className="block bg-gradient-to-r from-white via-blue-100 to-cyan-200 bg-clip-text text-transparent">
-                Patel
+                Sarvam Patel
               </span>
             </motion.h1>
 
@@ -122,7 +119,7 @@ Full Stack Developer focused on building modern web applications with React, Nex
               transition={{ duration: 0.8, delay: 0.9 }}
               className="flex flex-wrap gap-2 mt-10"
             >
-              {["React", "Next.js", "TypeScript", "Node.js", "MongoDB", "PostgreSQL"].map((tech, i) => (
+              {["React", "Next.js", "TypeScript", "Node.js", "PostgreSQL", "Linux"].map((tech, i) => (
                 <span
                   key={tech}
                   className="px-3 py-1 text-xs text-gray-400 bg-white/5 border border-white/10 rounded-full"
@@ -191,7 +188,7 @@ Full Stack Developer focused on building modern web applications with React, Nex
 
                 {/* Stats bar at bottom */}
                 <div className="flex items-center justify-between px-6 py-3 bg-white/3 border-t border-white/10">
-                  <div className="flex gap-4">
+                  <div className="pl-16 flex gap-4">
                     <span className="text-xs text-gray-500">TypeScript</span>
                     <span className="text-xs text-gray-600">•</span>
                     <span className="text-xs text-green-400">● ready</span>
