@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink, FolderGit2, Code2 } from "lucide-react";
+import { FiGithub } from "react-icons/fi";
+import { ExternalLink, Code2 } from "lucide-react";
 import { useInView } from "@/hooks/Inviews";
 
 interface Project {
@@ -49,8 +50,6 @@ const projects: Project[] = [
     tags: ["Node.js", "Express", "MongoDB", "EJS", "Tailwind"],
 
     githubUrl: "https://github.com/CoreTech7704/URL-Shortener",
-
-    featured: true,
   },
 
   {
@@ -128,7 +127,7 @@ export default function Projects() {
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center gap-3">
                     <div className="p-2 bg-blue-500/10 border border-blue-500/20 rounded-lg">
-                      <FolderGit2 className="w-4 h-4 text-blue-400" />
+                      <FiGithub className="w-4 h-4 text-blue-400" />
                     </div>
                     {project.featured && (
                       <span className="px-2.5 py-0.5 bg-blue-500/15 border border-blue-400/25 rounded-full text-xs text-blue-300">
@@ -213,7 +212,7 @@ export default function Projects() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-blue-400/40 rounded-xl transition-all text-gray-300 hover:text-white"
           >
-            <FolderGit2 className="w-5 h-5" />
+            <FiGithub className="w-5 h-5" />
             View All Projects on GitHub
             <ExternalLink className="w-4 h-4" />
           </a>
