@@ -40,28 +40,14 @@ const skillCategories = [
     icon: Database,
     gradient: "from-indigo-600 to-blue-500",
     glow: "from-indigo-600/15 to-blue-500/5",
-    skills: [
-      "MongoDB",
-      "PostgreSQL",
-      "MySQL",
-      "Mongoose",
-      "Prizma",
-    ],
+    skills: ["MongoDB", "PostgreSQL", "MySQL", "Mongoose", "Prizma"],
   },
   {
     title: "Tools & Technologies",
     icon: Wrench,
     gradient: "from-blue-500 to-cyan-500",
     glow: "from-blue-500/15 to-cyan-500/5",
-    skills: [
-      "Git",
-      "GitHub",
-      "Docker",
-      "Linux",
-      "Vercel",
-      "Postman",
-      "Figma",
-    ],
+    skills: ["Git", "GitHub", "Docker", "Linux", "Vercel", "Postman", "Figma"],
   },
 ];
 
