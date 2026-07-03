@@ -11,7 +11,7 @@ export default function Home() {
   return (
         <div className="min-h-screen bg-[#0a0f1e] text-white overflow-x-hidden">
       {/* Navy background with subtle gradient */}
-      <div className="fixed inset-0 bg-gradient-to-br from-[#0a0f1e] via-[#0d1424] to-[#0a0f1e] -z-10" />
+      <div className="fixed inset-0 bg-linear-to-br from-[#0a0f1e] via-[#0d1424] to-[#0a0f1e] -z-10" />
 
       {/* Subtle grid pattern */}
       <div
