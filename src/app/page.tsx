@@ -5,7 +5,6 @@ import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Journey from "@/components/Journey";
 import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -29,7 +28,6 @@ export default function Home() {
       <Projects />
       <Journey />
       <Contact />
-      <Footer />
     </div>
   );
 }
