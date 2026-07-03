@@ -13,8 +13,57 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sarvam Patel - Portfolio",
-  description: "Portfolio of Sarvam Patel, a software engineer and web developer.",
+  title: "Sarvam Patel | Full Stack Developer",
+
+  description:
+    "Full Stack Developer specializing in React, Next.js, Node.js and scalable web applications. Portfolio showcasing projects, experience and technical skills.",
+
+  keywords: [
+    "Sarvam Patel",
+    "Full Stack Developer",
+    "MERN Stack",
+    "React Developer",
+    "Next.js",
+    "Node.js",
+    "Portfolio",
+    "Web Developer",
+    "Software Engineer",
+  ],
+
+  authors: [{ name: "Sarvam Patel" }],
+
+  creator: "Sarvam Patel",
+
+  metadataBase: new URL("https://sarvam-portfolio.vercel.app"),
+
+  openGraph: {
+    title: "Sarvam Patel | Full Stack Developer",
+
+    description:
+      "Portfolio showcasing projects, internships and full-stack development experience.",
+
+    url: "https://sarvam-portfolio.vercel.app",
+
+    siteName: "Sarvam Portfolio",
+
+    locale: "en_US",
+
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+
+    title: "Sarvam Patel",
+
+    description:
+      "Full Stack Developer specializing in React, Next.js and Node.js.",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
