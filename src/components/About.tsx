@@ -57,11 +57,11 @@ export default function About() {
           className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl mb-4">
-            <span className="bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-white to-blue-200 bg-clip-text text-transparent">
               About Me
             </span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-cyan-400 mx-auto rounded-full" />
+          <div className="w-20 h-1 bg-linear-to-rrom-blue-500 to-cyan-400 mx-auto rounded-full" />
         </motion.div>
 
         {/* Two-column layout */}
@@ -133,16 +133,16 @@ export default function About() {
                   className="relative group"
                 >
                   <div
-                    className={`absolute inset-0 bg-gradient-to-br ${stat.glow} rounded-2xl blur-xl group-hover:blur-2xl transition-all`}
+                    className={`absolute inset-0 bg-linear-to-br ${stat.glow} rounded-2xl blur-xl group-hover:blur-2xl transition-all`}
                   />
                   <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/8 hover:border-white/20 transition-all h-full flex flex-col items-center text-center gap-4">
                     <div
-                      className={`p-3 rounded-xl bg-gradient-to-br ${stat.gradient}`}
+                      className={`p-3 rounded-xl bg-linear-to-br ${stat.gradient}`}
                     >
                       <Icon className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <div className="text-2xl md:text-3xl bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-1">
+                      <div className="text-2xl md:text-3xl bg-linear-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-1">
                         {stat.value}
                       </div>
                       <div className="text-sm text-gray-400">{stat.label}</div>

@@ -21,12 +21,12 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center justify-center pt-20 px-6 md:px-12 overflow-hidden">
       {/* Background orbs */}
       <motion.div
-        className="absolute top-1/4 -left-60 w-[500px] h-[500px] bg-blue-600/15 rounded-full blur-[140px]"
+        className="absolute top-1/4 -left-60 w-125 h-125 bg-blue-600/15 rounded-full blur-[140px]"
         animate={{ scale: [1, 1.15, 1], opacity: [0.4, 0.6, 0.4] }}
         transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute bottom-1/4 -right-60 w-[500px] h-[500px] bg-cyan-500/15 rounded-full blur-[140px]"
+        className="absolute bottom-1/4 -right-60 w-125 h-125 bg-cyan-500/15 rounded-full blur-[140px]"
         animate={{ scale: [1.15, 1, 1.15], opacity: [0.3, 0.5, 0.3] }}
         transition={{
           duration: 9,
@@ -62,7 +62,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <span className="block bg-gradient-to-r from-white via-blue-100 to-cyan-200 bg-clip-text text-transparent">
+              <span className="block bg-linear-to-r from-white via-blue-100 to-cyan-200 bg-clip-text text-transparent">
                 Sarvam Patel
               </span>
             </motion.h1>
@@ -101,9 +101,9 @@ export default function Hero() {
             >
               <button
                 onClick={scrollToProjects}
-                className="group relative px-7 py-3.5 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-xl overflow-hidden transition-all hover:shadow-lg hover:shadow-blue-500/40 hover:scale-105"
+                className="group relative px-7 py-3.5 bg-linear-to-r from-blue-600 to-cyan-500 rounded-xl overflow-hidden transition-all hover:shadow-lg hover:shadow-blue-500/40 hover:scale-105"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute inset-0 bg-linear-to-r from-blue-500 to-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity" />
                 <span className="relative flex items-center gap-2">
                   <FolderGit2 className="w-5 h-5" />
                   View My Work
@@ -135,7 +135,7 @@ export default function Hero() {
                 "Node.js",
                 "PostgreSQL",
                 "Linux",
-              ].map((tech, i) => (
+              ].map((tech) => (
                 <span
                   key={tech}
                   className="px-3 py-1 text-xs text-gray-400 bg-white/5 border border-white/10 rounded-full"
@@ -155,7 +155,7 @@ export default function Hero() {
           >
             <div className="relative w-full max-w-md">
               {/* Outer glow */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-cyan-500/20 rounded-2xl blur-2xl" />
+              <div className="absolute inset-0 bg-linear-to-br from-blue-600/20 to-cyan-500/20 rounded-2xl blur-2xl" />
 
               {/* Code window card */}
               <div className="relative bg-[#0d1424] border border-white/10 rounded-2xl overflow-hidden shadow-2xl">

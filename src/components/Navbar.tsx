@@ -77,7 +77,7 @@ export default function Navbar() {
         <div
           className={`absolute inset-0 transition-all duration-300 ${
             scrolled
-              ? "bg-[#0a0f1e]/80 backdrop-blur-xl border-b border-white/[0.06] shadow-[0_1px_40px_rgba(0,0,0,0.4)]"
+              ? "bg-[#0a0f1e]/80 backdrop-blur-xl border-b border-white/6 shadow-[0_1px_40px_rgba(0,0,0,0.4)]"
               : "bg-transparent"
           }`}
         />
@@ -89,8 +89,8 @@ export default function Navbar() {
             className="group flex items-center gap-2.5 shrink-0"
             aria-label="Scroll to top"
           >
-            <div className="relative w-9 h-9 rounded-xl bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center shadow-lg shadow-blue-500/20 group-hover:shadow-blue-500/40 transition-shadow">
-              <span className="text-white text-sm select-none">SP</span>
+            <div className="relative w-9 h-9 rounded-xl bg-linear-to-br from-blue-600 to-cyan-500 flex items-center justify-center shadow-lg shadow-blue-500/20 group-hover:shadow-blue-500/40 transition-shadow">
+              <span className="text-white text-md select-none">SP</span>
             </div>
             <span
               className={`hidden sm:block text-sm text-white/70 group-hover:text-white transition-colors duration-200 ${
@@ -140,7 +140,7 @@ export default function Navbar() {
             <a
               href="#"
               download
-              className="hidden md:flex items-center gap-2 px-4 py-2 text-sm bg-gradient-to-r from-blue-600 to-cyan-500 rounded-lg hover:shadow-lg hover:shadow-blue-500/30 hover:scale-105 transition-all duration-200"
+              className="hidden md:flex items-center gap-2 px-4 py-2 text-sm bg-linear-to-r from-blue-600 to-cyan-500 rounded-lg hover:shadow-lg hover:shadow-blue-500/30 hover:scale-105 transition-all duration-200"
             >
               <FileDown className="w-4 h-4" />
               Resume
@@ -220,7 +220,7 @@ export default function Navbar() {
                     href="#"
                     download
                     onClick={() => setMobileOpen(false)}
-                    className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-xl text-sm hover:shadow-lg hover:shadow-blue-500/30 transition-all"
+                    className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-linear-to-r from-blue-600 to-cyan-500 rounded-xl text-sm hover:shadow-lg hover:shadow-blue-500/30 transition-all"
                   >
                     <FileDown className="w-4 h-4" />
                     Download Resume
