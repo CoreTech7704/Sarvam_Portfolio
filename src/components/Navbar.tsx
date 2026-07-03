@@ -49,17 +49,21 @@ export default function Navbar() {
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
-  const handleNavClick = useCallback((href: string) => {
-    setMobileOpen(false);
+  const handleNavClick = (href: string) => {
     const id = href.replace("#", "");
     const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({
+
+    setMobileOpen(false);
+
+    if (!el) return;
+
+    setTimeout(() => {
+      window.scrollTo({
+        top: el.offsetTop - 90,
         behavior: "smooth",
-        block: "start",
       });
-    }
-  }, []);
+    }, 180);
+  };
 
   const scrollToTop = useCallback(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -189,7 +193,12 @@ export default function Navbar() {
               transition={{ duration: 0.22, ease: "easeOut" }}
               className="md:hidden overflow-hidden"
             >
-              <div className="mx-6 mt-2 mb-3 bg-[#0d1424]/90 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden shadow-2xl shadow-black/40">
+              <div
+                className="max-w-sm mx-auto mt-2 mb-3 bg-[#081120]/80
+                backdrop-blur-2xl
+                border border-white/8
+                shadow-[0_8px_40px_rgba(0,0,0,0.45)] rounded-2xl overflow-hidden shadow-black/40"
+              >
                 <div className="p-3 space-y-1">
                   {navLinks.map((link) => {
                     const sectionId = link.href.replace("#", "");
@@ -199,7 +208,7 @@ export default function Navbar() {
                       <button
                         key={link.href}
                         onClick={() => handleNavClick(link.href)}
-                        className={`w-full flex items-center justify-between px-4 py-3 rounded-xl text-sm transition-colors ${
+                        className={`relative overflow-hidden w-full flex items-center justify-between px-4 py-3 rounded-xl text-sm ${
                           isActive
                             ? "bg-blue-500/10 border border-blue-400/20 text-blue-300"
                             : "text-gray-300 hover:bg-white/5 hover:text-white border border-transparent"
