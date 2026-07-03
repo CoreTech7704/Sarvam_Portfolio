@@ -226,7 +226,7 @@ export default function Navbar() {
                 <div className="px-3 pb-3">
                   <div className="h-px bg-white/8 mb-3" />
                   <a
-                    href="#"
+                    href="/resume.pdf"
                     download
                     onClick={() => setMobileOpen(false)}
                     className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-linear-to-r from-blue-600 to-cyan-500 rounded-xl text-sm hover:shadow-lg hover:shadow-blue-500/30 transition-all"

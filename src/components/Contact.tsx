@@ -154,7 +154,7 @@ export default function Contact() {
                 </p>
               </div>
               <a
-                href="#"
+                href="/resume.pdf"
                 download
                 className="group/btn relative px-8 py-3.5 bg-linear-to-r from-blue-600 to-cyan-500 rounded-xl overflow-hidden transition-all hover:shadow-lg hover:shadow-blue-500/40 hover:scale-105 whitespace-nowrap"
               >
