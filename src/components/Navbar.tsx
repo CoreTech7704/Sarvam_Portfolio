@@ -93,7 +93,7 @@ export default function Navbar() {
             className="group flex items-center gap-2.5 shrink-0"
             aria-label="Scroll to top"
           >
-            <div className="relative w-9 h-9 rounded-xl bg-linear-to-br from-blue-600 to-cyan-500 flex items-center justify-center shadow-lg shadow-blue-500/20 group-hover:shadow-blue-500/40 transition-shadow">
+            <div className="relative w-9 h-9 rounded-xl bg-linear-to-br from-blue-600 to-cyan-500 flex items-center justify-center shadow-lg shadow-blue-500/20 group-hover:shadow-blue-500/50 group-hover:scale-105 transition-all duration-300">
               <span className="text-white text-md select-none">SP</span>
             </div>
             <span
@@ -115,6 +115,7 @@ export default function Navbar() {
                 <button
                   key={link.href}
                   onClick={() => handleNavClick(link.href)}
+                  aria-label={link.label}
                   className={`relative px-4 py-2 text-sm rounded-lg transition-colors duration-200 ${
                     isActive
                       ? "text-blue-300"
@@ -142,8 +143,9 @@ export default function Navbar() {
           {/* Right: Resume CTA + hamburger */}
           <div className="flex items-center gap-3">
             <a
-              href="#"
+              href="/resume.pdf"
               download
+              aria-label="Download resume"
               className="hidden md:flex items-center gap-2 px-4 py-2 text-sm bg-linear-to-r from-blue-600 to-cyan-500 rounded-lg hover:shadow-lg hover:shadow-blue-500/30 hover:scale-105 transition-all duration-200"
             >
               <FileDown className="w-4 h-4" />
@@ -152,9 +154,11 @@ export default function Navbar() {
 
             {/* Mobile hamburger */}
             <button
+              id="mobile-menu"
               onClick={() => setMobileOpen((o) => !o)}
               className="md:hidden relative w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
-              aria-label="Toggle menu"
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-menu"
             >
               <AnimatePresence mode="wait" initial={false}>
                 {mobileOpen ? (
@@ -194,20 +198,21 @@ export default function Navbar() {
               className="md:hidden overflow-hidden"
             >
               <div
-                className="max-w-sm mx-auto mt-2 mb-3 bg-[#081120]/80
+                className="mx-4 mt-2 mb-3 bg-[#081120]/80
                 backdrop-blur-2xl
                 border border-white/8
                 shadow-[0_8px_40px_rgba(0,0,0,0.45)] rounded-2xl overflow-hidden shadow-black/40"
               >
                 <div className="p-3 space-y-1">
                   {navLinks.map((link) => {
-                    const sectionId = link.href.replace("#", "");
+                    const sectionId = link.href.slice(1);
                     const isActive = activeSection === sectionId;
 
                     return (
                       <button
                         key={link.href}
                         onClick={() => handleNavClick(link.href)}
+                        aria-label={link.label}
                         className={`relative overflow-hidden w-full flex items-center justify-between px-4 py-3 rounded-xl text-sm ${
                           isActive
                             ? "bg-blue-500/10 border border-blue-400/20 text-blue-300"
@@ -229,6 +234,7 @@ export default function Navbar() {
                     href="/resume.pdf"
                     download
                     onClick={() => setMobileOpen(false)}
+                    aria-label="Download resume"
                     className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-linear-to-r from-blue-600 to-cyan-500 rounded-xl text-sm hover:shadow-lg hover:shadow-blue-500/30 transition-all"
                   >
                     <FileDown className="w-4 h-4" />
