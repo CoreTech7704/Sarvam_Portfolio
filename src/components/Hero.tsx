@@ -62,7 +62,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <span className="block bg-linear-to-r from-white via-blue-100 to-cyan-200 bg-clip-text text-transparent">
+              <span className="block bg-linear-to-r from-white via-blue-100 to-cyan-300 bg-clip-text text-transparent">
                 Sarvam Patel
               </span>
             </motion.h1>
@@ -76,11 +76,6 @@ export default function Hero() {
             >
               <span className="text-xl md:text-2xl text-blue-400">
                 Full Stack Web Developer
-              </span>
-              <br />
-              <span>
-                Building modern web applications <br />
-                with React, Next.js and Node.js
               </span>
             </motion.div>
 
@@ -106,13 +101,13 @@ export default function Hero() {
             >
               <button
                 onClick={scrollToProjects}
-                aria-label="View my work"
+                aria-label="Explore projects"
                 className="group relative px-7 py-3.5 bg-linear-to-r from-blue-600 to-cyan-500 rounded-xl overflow-hidden transition-all hover:shadow-lg hover:shadow-blue-500/40 hover:scale-105"
               >
                 <div className="absolute inset-0 bg-linear-to-r from-blue-500 to-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity" />
                 <span className="relative flex items-center gap-2">
                   <FolderGit2 className="w-5 h-5" />
-                  View My Work
+                  Explore Projects
                 </span>
               </button>
 
@@ -124,7 +119,7 @@ export default function Hero() {
               >
                 <span className="flex items-center justify-center gap-2">
                   <FileDown className="w-5 h-5" />
-                  Download Resume
+                  Download CV
                 </span>
               </a>
             </motion.div>
@@ -239,7 +234,7 @@ export default function Hero() {
                 className="absolute -bottom-4 -left-6 bg-[#0d1424] border border-blue-400/30 rounded-xl px-4 py-3 shadow-lg"
               >
                 <div className="text-2xl text-blue-400 mb-0.5">8+</div>
-                <div className="text-xs text-gray-400">Real Projects</div>
+                <div className="text-xs text-gray-400">Projects Built</div>
               </motion.div>
 
               {/* Floating badge: stack */}
