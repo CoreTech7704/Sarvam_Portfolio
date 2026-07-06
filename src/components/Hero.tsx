@@ -77,6 +77,11 @@ export default function Hero() {
               <span className="text-xl md:text-2xl text-blue-400">
                 Full Stack Web Developer
               </span>
+              <br />
+              <span>
+                Building modern web applications <br />
+                with React, Next.js and Node.js
+              </span>
             </motion.div>
 
             {/* Intro */}
@@ -86,10 +91,10 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="text-gray-300 text-lg leading-relaxed mb-10 max-w-lg"
             >
-              Full Stack Developer focused on building modern web applications
-              with React, Next.js and Node.js. Passionate about Linux, system
-              architecture, networking and creating reliable software
-              solutions.{" "}
+              Computer Science graduate specializing in full-stack web
+              development with React, Next.js and Node.js. Passionate about
+              backend engineering, Linux systems, networking and building
+              reliable software solutions.{" "}
             </motion.p>
 
             {/* CTAs */}
@@ -101,6 +106,7 @@ export default function Hero() {
             >
               <button
                 onClick={scrollToProjects}
+                aria-label="View my work"
                 className="group relative px-7 py-3.5 bg-linear-to-r from-blue-600 to-cyan-500 rounded-xl overflow-hidden transition-all hover:shadow-lg hover:shadow-blue-500/40 hover:scale-105"
               >
                 <div className="absolute inset-0 bg-linear-to-r from-blue-500 to-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -111,7 +117,9 @@ export default function Hero() {
               </button>
 
               <a
-                href="#contact"
+                href="/resume.pdf"
+                download
+                aria-label="Download resume"
                 className="group px-7 py-3.5 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:bg-white/10 hover:border-blue-400/40 transition-all text-center"
               >
                 <span className="flex items-center justify-center gap-2">
@@ -128,21 +136,16 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.9 }}
               className="flex flex-wrap gap-2 mt-10"
             >
-              {[
-                "React",
-                "Next.js",
-                "TypeScript",
-                "Node.js",
-                "PostgreSQL",
-                "Linux",
-              ].map((tech) => (
-                <span
-                  key={tech}
-                  className="px-3 py-1 text-xs text-gray-400 bg-white/5 border border-white/10 rounded-full"
-                >
-                  {tech}
-                </span>
-              ))}
+              {["React", "Next.js", "Node.js", "MongoDB", "Redis", "Linux"].map(
+                (tech) => (
+                  <span
+                    key={tech}
+                    className="px-3 py-1 text-xs text-gray-400 bg-white/5 border border-white/10 rounded-full"
+                  >
+                    {tech}
+                  </span>
+                ),
+              )}
             </motion.div>
           </motion.div>
 
