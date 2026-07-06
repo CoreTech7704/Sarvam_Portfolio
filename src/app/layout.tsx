@@ -13,28 +13,34 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sarvam Patel | Full Stack Developer",
+  metadataBase: new URL("https://sarvam-portfolio.vercel.app"),
+
+  title: {
+    default: "Sarvam Patel | Full Stack Developer",
+    template: "%s | Sarvam Patel",
+  },
 
   description:
-    "Full Stack Developer specializing in React, Next.js, Node.js and scalable web applications. Portfolio showcasing projects, experience and technical skills.",
+    "Full Stack Developer specializing in React, Next.js, Node.js and scalable web applications. Portfolio showcasing projects, internships and technical skills.",
 
   keywords: [
     "Sarvam Patel",
     "Full Stack Developer",
-    "MERN Stack",
     "React Developer",
-    "Next.js",
+    "Next.js Developer",
     "Node.js",
+    "MERN Stack",
     "Portfolio",
     "Web Developer",
     "Software Engineer",
   ],
 
   authors: [{ name: "Sarvam Patel" }],
-
   creator: "Sarvam Patel",
 
-  metadataBase: new URL("https://sarvam-portfolio.vercel.app"),
+  alternates: {
+    canonical: "/",
+  },
 
   openGraph: {
     title: "Sarvam Patel | Full Stack Developer",
@@ -42,22 +48,33 @@ export const metadata: Metadata = {
     description:
       "Portfolio showcasing projects, internships and full-stack development experience.",
 
-    url: "https://sarvam-portfolio.vercel.app",
+    url: "/",
 
     siteName: "Sarvam Portfolio",
 
     locale: "en_US",
 
     type: "website",
+
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Sarvam Patel Portfolio",
+      },
+    ],
   },
 
   twitter: {
     card: "summary_large_image",
 
-    title: "Sarvam Patel",
+    title: "Sarvam Patel | Full Stack Developer",
 
     description:
-      "Full Stack Developer specializing in React, Next.js and Node.js.",
+      "Portfolio showcasing projects, internships and technical skills.",
+
+    images: ["/og-image.png"],
   },
 
   robots: {
@@ -76,7 +93,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full bg-[#030712] text-white overflow-x-hidden flex flex-col">{children}</body>
     </html>
   );
 }
