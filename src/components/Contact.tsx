@@ -2,47 +2,10 @@
 
 import { motion } from "framer-motion";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
-import { Mail, FileDown, ExternalLink, MapPin } from "lucide-react";
+import { Mail, FileDown, ExternalLink } from "lucide-react";
 import { useInView } from "@/hooks/Inviews";
+import { contactMethods } from "@/data/contact";
 
-const contactMethods = [
-  {
-    icon: FiGithub,
-    label: "GitHub",
-    value: "github.com/sarvampatel",
-    href: "https://github.com/CoreTech7704",
-    gradient: "from-gray-600 to-gray-500",
-    glow: "from-gray-600/15 to-gray-500/5",
-    description: "Browse my projects and contributions",
-  },
-  {
-    icon: FiLinkedin,
-    label: "LinkedIn",
-    value: "linkedin.com/in/sarvampatel",
-    href: "https://www.linkedin.com/in/sarvam-patel/",
-    gradient: "from-blue-600 to-blue-500",
-    glow: "from-blue-600/15 to-blue-500/5",
-    description: "Connect with me professionally",
-  },
-  {
-    icon: Mail,
-    label: "Email",
-    value: "sarvampatel953@gmail.com",
-    href: "mailto:sarvampatel953@gmail.com",
-    gradient: "from-cyan-600 to-cyan-400",
-    glow: "from-cyan-600/15 to-cyan-400/5",
-    description: "Send me a direct message",
-  },
-  {
-    icon: MapPin,
-    label: "Location",
-    value: "Available for Remote & On-Site Work",
-    href: null,
-    gradient: "from-indigo-600 to-blue-500",
-    glow: "from-indigo-600/15 to-blue-500/5",
-    description: "Open to global opportunities",
-  },
-];
 
 export default function Contact() {
   const { ref, inView } = useInView();
@@ -93,7 +56,7 @@ export default function Contact() {
                   </div>
                 </div>
                 {method.href && (
-                  <ExternalLink className="w-4 h-4 text-gray-600 group-hover:text-blue-400 ml-auto shrink-0 transition-colors" />
+                  <ExternalLink className="w-4 h-4 text-gray-500 group-hover:text-blue-400 ml-auto shrink-0 transition-colors" />
                 )}
               </div>
             );
@@ -146,7 +109,7 @@ export default function Contact() {
             <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
               <div className="text-center sm:text-left">
                 <h3 className="text-xl text-white mb-1.5">
-                  Download My Resume
+                  Interested in Working Together?
                 </h3>
                 <p className="text-gray-400 text-sm">
                   A comprehensive overview of my experience, skills, and
@@ -156,6 +119,7 @@ export default function Contact() {
               <a
                 href="/resume.pdf"
                 download
+                aria-label="Download Resume PDF"
                 className="group/btn relative px-8 py-3.5 bg-linear-to-r from-blue-600 to-cyan-500 rounded-xl overflow-hidden transition-all hover:shadow-lg hover:shadow-blue-500/40 hover:scale-105 whitespace-nowrap"
               >
                 <div className="absolute inset-0 bg-linear-to-r from-blue-500 to-cyan-400 opacity-0 group-hover/btn:opacity-100 transition-opacity" />
@@ -176,7 +140,7 @@ export default function Contact() {
           className="pt-10 border-t border-white/10 text-center"
         >
           <p className="text-gray-500 text-sm mb-5">
-            © 2024 Sarvam Patel · Built with React, Tailwind CSS & Motion
+            © {new Date().getFullYear()} Sarvam Patel · Built with Next.js, Tailwind CSS & Framer Motion
           </p>
           <div className="flex justify-center gap-5">
             {[
@@ -194,7 +158,7 @@ export default function Contact() {
                 rel={
                   href.startsWith("http") ? "noopener noreferrer" : undefined
                 }
-                className="p-2 text-gray-500 hover:text-blue-400 hover:bg-white/5 rounded-lg transition-all"
+                className="p-2 text-gray-500 hover:text-blue-400 hover:bg-blue-500/10 hover:scale-110 rounded-lg transition-all duration-300"
               >
                 <Icon className="w-5 h-5" />
               </a>
