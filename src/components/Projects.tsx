@@ -4,87 +4,7 @@ import { motion } from "framer-motion";
 import { FiGithub } from "react-icons/fi";
 import { ExternalLink, Code2 } from "lucide-react";
 import { useInView } from "@/hooks/Inviews";
-
-interface Project {
-  title: string;
-  description: string;
-  tags: string[];
-  githubUrl: string;
-  liveUrl?: string;
-  featured?: boolean;
-}
-
-const projects: Project[] = [
-  {
-    title: "VOIDWORK",
-    description:
-      "A modern full-stack blogging platform developed during my internship. Features authentication, markdown blogging, Redis caching, media uploads, role-based access control and a scalable backend architecture.",
-
-    tags: ["React", "Node.js", "Express", "MongoDB", "Redis", "Cloudinary"],
-
-    liveUrl: "https://blog-frontend-steel-three.vercel.app/",
-    githubUrl: "https://github.com/yourusername/voidwork",
-
-    featured: true,
-  },
-
-  {
-    title: "Swift News",
-
-    description:
-      "A responsive news application built with React and Tailwind CSS. Fetches real-time headlines using the GNews API with category filtering, infinite scrolling and dark mode support.",
-
-    tags: ["React", "Tailwind", "JavaScript", "GNews API"],
-
-    githubUrl: "https://github.com/CoreTech7704/swiftnews",
-
-    featured: true,
-  },
-
-  {
-    title: "URL Shortener",
-
-    description:
-      "A URL shortening platform built with Node.js and MongoDB featuring unique ID generation, redirection handling and click analytics.",
-
-    tags: ["Node.js", "Express", "MongoDB", "EJS", "Tailwind"],
-
-    githubUrl: "https://github.com/CoreTech7704/URL-Shortener",
-  },
-
-  {
-    title: "Snap News",
-
-    description:
-      "A Bootstrap-powered news website that integrates the GNews API to deliver real-time headlines with category-based filtering and responsive layouts.",
-
-    tags: ["React", "Bootstrap", "JavaScript", "GNews API"],
-
-    githubUrl: "https://github.com/CoreTech7704/newsapp",
-  },
-
-  {
-    title: "DES Visualizer",
-
-    description:
-      "A C language implementation and visualization of the DES encryption algorithm demonstrating key scheduling, permutations and low-level cryptographic concepts.",
-
-    tags: ["C", "Cryptography", "Algorithms"],
-
-    githubUrl: "https://github.com/CoreTech7704/DES_Algorithem",
-  },
-
-  {
-    title: "Pari Travel Agency",
-
-    description:
-      "A responsive website developed for a real travel agency client featuring custom UI design, service sections and contact functionality.",
-
-    tags: ["HTML", "CSS", "JavaScript"],
-
-    githubUrl: "https://github.com/CoreTech7704/Pari-Agency",
-  },
-];
+import { projects, projectsContent } from "@/data/projects";
 
 export default function Projects() {
   const { ref, inView } = useInView();
@@ -101,12 +21,12 @@ export default function Projects() {
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl mb-4">
             <span className="bg-linear-to-r from-white to-blue-200 bg-clip-text text-transparent">
-              Featured Projects
+              {projectsContent.title}
             </span>
           </h2>
           <div className="w-20 h-1 bg-linear-to-r from-blue-500 to-cyan-400 mx-auto rounded-full mb-6" />
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            A showcase of my recent work and technical expertise
+            {projectsContent.subtitle}
           </p>
         </motion.div>
 
@@ -122,7 +42,7 @@ export default function Projects() {
             >
               <div className="absolute inset-0 bg-linear-to-br from-blue-600/10 to-cyan-500/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all" />
 
-              <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/8 hover:border-blue-400/25 transition-all h-full flex flex-col">
+              <div className="relative bg-white/4 backdrop-blur-md border border-white/8 rounded-2xl p-6 hover:bg-white/8 hover:border-blue-400/25 transition-all h-full flex flex-col">
                 {/* Header */}
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center gap-3">
@@ -139,6 +59,8 @@ export default function Projects() {
                     {project.liveUrl && (
                       <a
                         href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="text-gray-500 hover:text-blue-400 transition-colors"
                         title="Live Demo"
                       >
@@ -147,6 +69,8 @@ export default function Projects() {
                     )}
                     <a
                       href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-gray-500 hover:text-blue-400 transition-colors"
                       title="Source Code"
                     >
@@ -207,7 +131,7 @@ export default function Projects() {
           className="mt-12 text-center"
         >
           <a
-            href="https://github.com"
+            href={projectsContent.github}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-blue-400/40 rounded-xl transition-all text-gray-300 hover:text-white"
