@@ -7,7 +7,7 @@ import { useInView } from "@/hooks/Inviews";
 const stats = [
   {
     value: "8+",
-    label: "Projects Completed",
+    label: "Projects Built",
     icon: Code2,
     gradient: "from-blue-600 to-blue-400",
     glow: "from-blue-600/15 to-blue-400/5",
@@ -28,7 +28,7 @@ const stats = [
   },
   {
     value: "Open",
-    label: "To Opportunities",
+    label: "For Work",
     icon: Rocket,
     gradient: "from-blue-500 to-cyan-500",
     glow: "from-blue-500/15 to-cyan-500/5",
@@ -41,6 +41,7 @@ const interests = [
   "Computer Hardware",
   "PC Building",
   "Open Source",
+  "Backend Systems",
 ];
 
 export default function About() {
@@ -52,16 +53,20 @@ export default function About() {
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="text-center mb-15"
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl mb-4">
             <span className="bg-linear-to-r from-white to-blue-200 bg-clip-text text-transparent">
               About Me
             </span>
           </h2>
-          <div className="w-20 h-1 bg-linear-to-rrom-blue-500 to-cyan-400 mx-auto rounded-full" />
+          <div className="w-20 h-1 bg-linear-to-r from-blue-500 to-cyan-400 mx-auto rounded-full mb-6" />
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            Learning through experimentation, projects and real-world
+            development.
+          </p>
         </motion.div>
 
         {/* Two-column layout */}
@@ -75,25 +80,27 @@ export default function About() {
           >
             <div className="space-y-5 text-gray-300 text-lg leading-relaxed">
               <p>
-                Full Stack Web Developer focused on building modern web
-                applications using React, Next.js and Node.js. I enjoy learning
-                about Linux systems, networking, computer hardware and creating
-                efficient software solutions.
+                Computer Science graduate and Full Stack Developer passionate
+                about building modern web applications using React, Next.js and
+                Node.js. I enjoy turning ideas into reliable software while
+                continuously learning through experimentation and hands-on
+                projects.
               </p>
               <p>
-                Beyond web development, I have a strong interest in{" "}
-                <span className="text-blue-400">Linux systems</span>,{" "}
-                <span className="text-blue-400">networking</span>,{" "}
-                <span className="text-blue-400">computer hardware</span>, and{" "}
-                <span className="text-blue-400">PC building</span>. This
-                holistic understanding of technology enables me to create
-                solutions that are not just functional, but optimized from the
-                ground up.
+                Beyond web development, I have a strong interest in
+                <span className="text-blue-400"> Linux systems</span>,
+                <span className="text-blue-400"> networking</span>,
+                <span className="text-blue-400"> computer hardware</span>
+                and
+                <span className="text-blue-400"> PC building</span>. Exploring
+                technology beyond code helps me understand how software,
+                infrastructure and hardware work together.
               </p>
               <p>
-                I believe in writing clean, maintainable code and staying
-                current with industry best practices. Every project is an
-                opportunity to learn something new and push boundaries.
+                I enjoy learning by building, testing and optimizing real-world
+                projects. Whether it&apos;s developing scalable APIs, deploying
+                applications or experimenting with Linux environments, I believe
+                every project is an opportunity to improve as an engineer.
               </p>
             </div>
 
@@ -135,7 +142,7 @@ export default function About() {
                   <div
                     className={`absolute inset-0 bg-linear-to-br ${stat.glow} rounded-2xl blur-xl group-hover:blur-2xl transition-all`}
                   />
-                  <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/8 hover:border-white/20 transition-all h-full flex flex-col items-center text-center gap-4">
+                  <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/8 hover:border-blue-400/25 transition-all h-full flex flex-col items-center text-center gap-4">
                     <div
                       className={`p-3 rounded-xl bg-linear-to-br ${stat.gradient}`}
                     >

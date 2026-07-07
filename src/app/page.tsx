@@ -12,7 +12,7 @@ const Contact = dynamic(() => import("@/components/Contact"));
 
 export default function Home() {
   return (
-    <main className="min-h-screen overflow-x-hidden bg-[#0a0f1e] text-white">
+    <main>
       <Background />
       <Navbar />
       <Hero />
