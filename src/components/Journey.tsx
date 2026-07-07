@@ -1,181 +1,36 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { GraduationCap, Briefcase, Code2, Target } from "lucide-react";
 import { useInView } from "@/hooks/Inviews";
-
-const timeline = [
-  {
-    type: "education",
-
-    icon: GraduationCap,
-
-    title: "B.E. Computer Science & Engineering",
-
-    organization: "University",
-
-    period: "2022 – 2026",
-
-    description:
-      "Completed Bachelor of Engineering in Computer Science with practical exposure to full-stack development, databases, networking, Linux systems and software engineering concepts.",
-
-    highlights: [
-      "CGPA: 8.16",
-      "Built multiple academic and personal projects",
-      "Focused on practical learning and experimentation",
-      "Studied networking, operating systems and databases",
-    ],
-
-    accent: "blue",
-  },
-
-  {
-    type: "experience",
-
-    icon: Briefcase,
-
-    title: "React Developer Intern",
-
-    organization: "Krtya Technologies",
-
-    period: "2025",
-
-    description:
-      "Worked as a React Developer Intern, contributing to frontend interfaces, reusable components and modern web application development workflows.",
-
-    highlights: [
-      "Developed responsive React interfaces",
-
-      "Worked with component-based architecture",
-
-      "Collaborated using Git and GitHub",
-
-      "Applied modern frontend development practices",
-    ],
-
-    accent: "cyan",
-  },
-
-  {
-    type: "project",
-
-    icon: Code2,
-
-    title: "Independent Projects",
-
-    organization: "Personal Development",
-
-    period: "2023 – Present",
-
-    description:
-      "Built personal projects to strengthen skills in frontend development, backend systems, authentication, APIs, databases and software architecture.",
-
-    highlights: [
-      "VOIDWORK",
-
-      "Swift News",
-
-      "URL Shortener",
-
-      "DES Visualizer",
-
-      "Pari Travel Agency",
-    ],
-
-    accent: "indigo",
-  },
-
-  {
-    type: "experience",
-
-    icon: Briefcase,
-
-    title: "Full Stack Developer Intern",
-
-    organization: "Krtya Technologies",
-
-    period: "2026",
-
-    description:
-      "Worked on a full-stack blogging platform during internship, contributing across frontend, backend APIs, authentication, caching and deployment-oriented architecture.",
-
-    highlights: [
-      "Developed VOIDWORK platform",
-
-      "Implemented JWT authentication",
-
-      "Integrated Redis caching",
-
-      "Cloudinary media management",
-
-      "Role-based access control",
-    ],
-
-    accent: "blue",
-  },
-
-  {
-    type: "goal",
-
-    icon: Target,
-
-    title: "Career Goals",
-
-    organization: "Looking Ahead",
-
-    period: "2026-Present",
-
-    description:
-      "Seeking opportunities to contribute to impactful products while expanding expertise in backend engineering, cloud technologies, Linux infrastructure and scalable systems.",
-
-    highlights: [
-      "Backend Engineering",
-
-      "Cloud Computing",
-
-      "DevOps",
-
-      "Distributed Systems",
-
-      "Open Source",
-    ],
-
-    accent: "purple",
-  },
-];
-
-const accentMap: Record<
-  string,
-  { dot: string; line: string; badge: string; icon: string }
-> = {
-  blue: {
-    dot: "bg-blue-500 shadow-blue-500/50",
-    line: "border-blue-500/30",
-    badge: "bg-blue-500/10 border-blue-400/20 text-blue-300",
-    icon: "from-blue-600 to-blue-400",
-  },
-  cyan: {
-    dot: "bg-cyan-500 shadow-cyan-500/50",
-    line: "border-cyan-500/30",
-    badge: "bg-cyan-500/10 border-cyan-400/20 text-cyan-300",
-    icon: "from-cyan-600 to-cyan-400",
-  },
-  indigo: {
-    dot: "bg-indigo-500 shadow-indigo-500/50",
-    line: "border-indigo-500/30",
-    badge: "bg-indigo-500/10 border-indigo-400/20 text-indigo-300",
-    icon: "from-indigo-600 to-blue-500",
-  },
-  purple: {
-    dot: "bg-purple-500 shadow-purple-500/50",
-    line: "border-purple-500/30",
-    badge: "bg-purple-500/10 border-purple-400/20 text-purple-300",
-    icon: "from-purple-600 to-indigo-500",
-  },
-};
+import { timeline } from "@/data/timeline";
+import { accentMap } from "@/data/timelineTheme";
 
 export default function Journey() {
   const { ref, inView } = useInView();
+
+  const fadeLeft = {
+    hidden: {
+      opacity: 0,
+
+      x: -20,
+    },
+
+    visible: {
+      opacity: 1,
+
+      x: 0,
+    },
+  };
+
+  const bulletColor = {
+    blue: "text-blue-400",
+
+    cyan: "text-cyan-400",
+
+    indigo: "text-indigo-400",
+
+    purple: "text-purple-400",
+  };
 
   return (
     <section id="experience" className="py-24 md:py-32 px-6 md:px-12 relative">
@@ -210,9 +65,9 @@ export default function Journey() {
 
               return (
                 <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={inView ? { opacity: 1, x: 0 } : {}}
+                  key={item.title}
+                  initial={fadeLeft.hidden}
+                  animate={inView ? fadeLeft.visible : {}}
                   transition={{ duration: 0.55, delay: index * 0.15 }}
                   className="relative flex gap-8"
                 >
@@ -220,7 +75,7 @@ export default function Journey() {
                   <div className="flex flex-col items-center shrink-0 w-12">
                     {/* Icon circle */}
                     <div
-                      className={`relative z-10 p-2.5 rounded-xl bg-linear-to-br ${accent.icon} shadow-lg`}
+                      className={`relative z-10 p-2.5 rounded-xl bg-linear-to-r ${accent.icon} shadow-lg`}
                     >
                       <Icon className="w-4 h-4 text-white" />
                     </div>
@@ -229,7 +84,7 @@ export default function Journey() {
                   {/* Right: card */}
                   <div className="flex-1 pb-2">
                     <div className="relative group">
-                      <div className="absolute inset-0 bg-linear-to-br from-blue-600/8 to-cyan-500/8 rounded-xl blur-xl group-hover:blur-2xl transition-all" />
+                      <div className="absolute inset-0 bg-linear-to-r from-blue-600/8 to-cyan-500/8 rounded-xl blur-xl group-hover:blur-2xl transition-all" />
                       <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/8 hover:border-white/15 transition-all">
                         {/* Period badge */}
                         <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
@@ -257,7 +112,9 @@ export default function Journey() {
                               key={i}
                               className="flex items-start gap-2 text-sm text-gray-400"
                             >
-                              <span className="text-blue-400 mt-0.5 shrink-0">
+                              <span
+                                className={`${bulletColor[item.accent]} mt-0.5 shrink-0`}
+                              >
                                 ▸
                               </span>
                               <span>{h}</span>
