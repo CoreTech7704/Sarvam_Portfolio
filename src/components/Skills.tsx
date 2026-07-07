@@ -1,66 +1,31 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code2, Database, Server, Wrench } from "lucide-react";
+import { skillCategories } from "@/data/skills";
 import { useInView } from "@/hooks/Inviews";
-
-const skillCategories = [
-  {
-    title: "Frontend",
-    icon: Code2,
-    gradient: "from-blue-600 to-blue-400",
-    glow: "from-blue-600/15 to-blue-400/5",
-    skills: [
-      "React.js",
-      "Next.js",
-      "TypeScript",
-      "JavaScript",
-      "HTML5",
-      "CSS3",
-      "Tailwind CSS",
-      "DaisyUI",
-    ],
-  },
-  {
-    title: "Backend",
-    icon: Server,
-    gradient: "from-cyan-600 to-cyan-400",
-    glow: "from-cyan-600/15 to-cyan-400/5",
-    skills: [
-      "Node.js",
-      "Express.js",
-      "Python",
-      "REST APIs",
-      "JWT Authentication",
-      "Redis Caching",
-    ],
-  },
-  {
-    title: "Database",
-    icon: Database,
-    gradient: "from-indigo-600 to-blue-500",
-    glow: "from-indigo-600/15 to-blue-500/5",
-    skills: ["MongoDB", "PostgreSQL", "MySQL", "Mongoose", "Prizma"],
-  },
-  {
-    title: "Tools & Technologies",
-    icon: Wrench,
-    gradient: "from-blue-500 to-cyan-500",
-    glow: "from-blue-500/15 to-cyan-500/5",
-    skills: ["Git", "GitHub", "Docker", "Linux", "Vercel", "Postman", "Figma"],
-  },
-];
 
 export default function Skills() {
   const { ref, inView } = useInView();
+
+  const fadeUp = {
+    hidden: {
+      opacity: 0,
+      y: 30,
+    },
+
+    visible: {
+      opacity: 1,
+      y: 0,
+    },
+  };
 
   return (
     <section id="skills" className="py-24 md:py-32 px-6 md:px-12 relative">
       <div className="max-w-6xl mx-auto" ref={ref}>
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
+          initial={fadeUp.hidden}
+          animate={inView ? fadeUp.visible : {}}
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
@@ -83,8 +48,8 @@ export default function Skills() {
             return (
               <motion.div
                 key={category.title}
-                initial={{ opacity: 0, y: 30 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
+                initial={fadeUp.hidden}
+                animate={inView ? fadeUp.visible : {}}
                 transition={{ duration: 0.6, delay: categoryIndex * 0.12 }}
                 className="relative group"
               >
@@ -94,7 +59,7 @@ export default function Skills() {
 
                 <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-7 hover:bg-white/8 hover:border-white/15 transition-all">
                   {/* Category Header */}
-                  <div className="flex items-center gap-3 mb-6 pb-5 border-b border-white/8">
+                  <div className="flex items-center gap-3 mb-6 pb-5 border-b border-white/10">
                     <div
                       className={`p-2.5 rounded-xl bg-linear-to-br ${category.gradient}`}
                     >
