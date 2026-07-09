@@ -159,6 +159,7 @@ export default function Navbar() {
               className="md:hidden relative w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
               aria-expanded={mobileOpen}
               aria-controls="mobile-menu"
+              aria-label="Toggle mobile menu"
             >
               <AnimatePresence mode="wait" initial={false}>
                 {mobileOpen ? (

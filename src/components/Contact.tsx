@@ -6,7 +6,6 @@ import { Mail, FileDown, ExternalLink } from "lucide-react";
 import { useInView } from "@/hooks/Inviews";
 import { contactMethods } from "@/data/contact";
 
-
 export default function Contact() {
   const { ref, inView } = useInView();
 
@@ -78,6 +77,7 @@ export default function Contact() {
                     target={
                       method.href.startsWith("http") ? "_blank" : undefined
                     }
+                    aria-label={`Visit ${method.label}`}
                     rel={
                       method.href.startsWith("http")
                         ? "noopener noreferrer"
@@ -140,7 +140,8 @@ export default function Contact() {
           className="pt-10 border-t border-white/10 text-center"
         >
           <p className="text-gray-500 text-sm mb-5">
-            © {new Date().getFullYear()} Sarvam Patel · Built with Next.js, Tailwind CSS & Framer Motion
+            © {new Date().getFullYear()} Sarvam Patel · Built with Next.js,
+            Tailwind CSS & Framer Motion
           </p>
           <div className="flex justify-center gap-5">
             {[
@@ -155,6 +156,7 @@ export default function Contact() {
                 key={href}
                 href={href}
                 target={href.startsWith("http") ? "_blank" : undefined}
+                arial-label={`Visit ${Icon.name} profile`}
                 rel={
                   href.startsWith("http") ? "noopener noreferrer" : undefined
                 }

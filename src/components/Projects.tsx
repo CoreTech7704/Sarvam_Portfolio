@@ -60,6 +60,7 @@ export default function Projects() {
                       <a
                         href={project.liveUrl}
                         target="_blank"
+                        aria-label={`Visit live demo of ${project.title}`}
                         rel="noopener noreferrer"
                         className="text-gray-500 hover:text-blue-400 transition-colors"
                         title="Live Demo"
@@ -71,6 +72,7 @@ export default function Projects() {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label={`View source code for ${project.title}`}
                       className="text-gray-500 hover:text-blue-400 transition-colors"
                       title="Source Code"
                     >
@@ -103,6 +105,7 @@ export default function Projects() {
                 <div className="flex gap-2 mt-auto">
                   <a
                     href={project.githubUrl}
+                    aria-label={`View source code for ${project.title}`}
                     className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-blue-400/40 rounded-xl transition-all text-sm text-gray-300 hover:text-white"
                   >
                     <Code2 className="w-4 h-4" />
@@ -111,6 +114,7 @@ export default function Projects() {
                   {project.liveUrl && (
                     <a
                       href={project.liveUrl}
+                      aria-label={`Visit live demo of ${project.title}`}
                       className="flex items-center justify-center gap-2 px-4 py-2.5 bg-blue-600/80 hover:bg-blue-500 rounded-xl transition-all text-sm text-white"
                     >
                       <ExternalLink className="w-4 h-4" />
@@ -134,6 +138,7 @@ export default function Projects() {
             href={projectsContent.github}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="View all projects on GitHub"
             className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-blue-400/40 rounded-xl transition-all text-gray-300 hover:text-white"
           >
             <FiGithub className="w-5 h-5" />
