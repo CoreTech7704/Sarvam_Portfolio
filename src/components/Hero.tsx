@@ -17,6 +17,10 @@ export default function Hero() {
     document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const scrollToAbout = () => {
+    document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
+  }
+
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20 px-6 md:px-12 overflow-hidden">
       {/* Background orbs */}
@@ -256,6 +260,8 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.6 }}
+          onClick={scrollToAbout}
+          aria-label="Scroll to about section"
           className="mt-16 lg:mt-24 mb-4 flex justify-center"
         >
           <motion.div
