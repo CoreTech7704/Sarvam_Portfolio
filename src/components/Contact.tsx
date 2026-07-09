@@ -162,7 +162,7 @@ export default function Contact() {
                 }
                 className="p-2 text-gray-500 hover:text-blue-400 hover:bg-blue-500/10 hover:scale-110 rounded-lg transition-all duration-300"
               >
-                <Icon className="w-5 h-5" />
+                <Icon aria-label={`Visit ${Icon.name} profile`} className="w-5 h-5" />
               </a>
             ))}
           </div>
