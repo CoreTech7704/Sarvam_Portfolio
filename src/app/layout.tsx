@@ -23,6 +23,10 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://sarvam-portfolio.vercel.app"),
 
+  verification: {
+    google: "s3xesMPTBFiRpfC8cJFTG9CjAalGTx6hincsH0nWg18",
+  },
+
   title: {
     default: "Sarvam Patel | Full Stack Developer",
     template: "%s | Sarvam Patel",
