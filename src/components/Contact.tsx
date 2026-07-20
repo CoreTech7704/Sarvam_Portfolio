@@ -37,25 +37,25 @@ export default function Contact() {
           {contactMethods.map((method, index) => {
             const Icon = method.icon;
             const inner = (
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 w-full">
                 <div
                   className={`p-3 rounded-xl bg-linear-to-br ${method.gradient} shrink-0`}
                 >
                   <Icon className="w-5 h-5 text-white" />
                 </div>
-                <div className="min-w-0">
-                  <div className="text-xs text-gray-500 mb-0.5">
-                    {method.label}
-                  </div>
-                  <div className="text-white text-sm group-hover:text-blue-200 transition-colors truncate">
+
+                <div className="flex-1 min-w-0">
+                  <p className="text-xs text-gray-500">{method.label}</p>
+
+                  <p className="text-sm text-white wrap-break-word">
                     {method.value}
-                  </div>
-                  <div className="text-xs text-gray-500 mt-0.5">
-                    {method.description}
-                  </div>
+                  </p>
+
+                  <p className="text-xs text-gray-500">{method.description}</p>
                 </div>
+
                 {method.href && (
-                  <ExternalLink className="w-4 h-4 text-gray-500 group-hover:text-blue-400 ml-auto shrink-0 transition-colors" />
+                  <ExternalLink className="w-4 h-4 shrink-0 text-gray-500 group-hover:text-blue-400 transition-colors" />
                 )}
               </div>
             );
@@ -156,13 +156,16 @@ export default function Contact() {
                 key={href}
                 href={href}
                 target={href.startsWith("http") ? "_blank" : undefined}
-                arial-label={`Visit ${Icon.name} profile`}
+                aria-label={`Visit ${Icon.name} profile`}
                 rel={
                   href.startsWith("http") ? "noopener noreferrer" : undefined
                 }
                 className="p-2 text-gray-500 hover:text-blue-400 hover:bg-blue-500/10 hover:scale-110 rounded-lg transition-all duration-300"
               >
-                <Icon aria-label={`Visit ${Icon.name} profile`} className="w-5 h-5" />
+                <Icon
+                  aria-label={`Visit ${Icon.name} profile`}
+                  className="w-5 h-5"
+                />
               </a>
             ))}
           </div>

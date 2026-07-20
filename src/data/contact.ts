@@ -33,7 +33,7 @@ export const contactMethods: ContactMethod[] = [
   {
     icon: MapPin,
     label: "Location",
-    value: "Open to remote, hybrid and on-site opportunities",
+    value: "Remote • Hybrid • On-site",
     href: null,
     gradient: "from-indigo-600 to-blue-500",
     glow: "from-indigo-600/15 to-blue-500/5",
