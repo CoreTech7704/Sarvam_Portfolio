@@ -18,18 +18,18 @@ const structuredData = [
     url: "https://sarvam-patel.vercel.app",
     image: "https://sarvam-patel.vercel.app/og-image.png",
     jobTitle: "Full Stack Web Developer",
-
+    description:
+      "Full Stack Web Developer specializing in React, Next.js, Node.js and scalable web applications.",
+    email: "mailto:sarvampatel953@gmail.com",
     sameAs: [
       "https://github.com/CoreTech7704",
       "https://www.linkedin.com/in/sarvam-patel/",
     ],
-
     knowsAbout: [
       "React",
       "Next.js",
-      "TypeScript",
       "Node.js",
-      "Express.js",
+      "TypeScript",
       "MongoDB",
       "PostgreSQL",
       "Linux",
