@@ -1,36 +1,129 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Sarvam Patel - Developer Portfolio
 
-## Getting Started
+![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4-38BDF8?logo=tailwindcss)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-First, run the development server:
+![Portfolio Preview](./public/preview.jpeg)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+A modern, responsive developer portfolio built with **Next.js 16**, **React**, **TypeScript**, **Tailwind CSS**, and **Framer Motion**.
+
+Designed to showcase my projects, technical skills, experience, and resume while maintaining excellent performance, accessibility, and SEO.
+
+## 🌐 Live Demo
+
+🔗 https://sarvam-patel.vercel.app
+
+
+
+## ✨ Features
+
+- ⚡ Built with Next.js 16 App Router
+- 🎨 Modern responsive UI
+- 🌙 Dark glassmorphism design
+- 📱 Mobile-first layout
+- ✨ Smooth Framer Motion animations
+- 📄 Resume download
+- 🔍 SEO optimized
+- 📈 Structured Data (Schema.org)
+- 🗺️ Sitemap & Robots.txt
+- 📊 Vercel Analytics & Speed Insights
+- ♿ Accessibility optimized
+- 🚀 Optimized performance
+
+
+
+## 🛠 Tech Stack
+
+### Frontend
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+
+### Icons
+
+- Lucide React
+- React Icons
+
+### Deployment
+
+- Vercel
+
+
+
+## 📂 Project Structure
+
+```text
+Portfolio
+├───public
+└───src
+    ├───app
+    ├───components
+    ├───data
+    ├───hooks
+    └───types
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Running Locally
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Clone the repository
 
-## Learn More
+```bash
+git clone https://github.com/CoreTech7704/sarvam-portfolio.git
+```
 
-To learn more about Next.js, take a look at the following resources:
+Go to the project
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+cd sarvam-portfolio
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Install dependencies
 
-## Deploy on Vercel
+```bash
+pnpm install
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Run development server
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+pnpm dev
+```
+
+Open
+
+```
+http://localhost:3000
+```
+
+
+## 📈 Lighthouse Scores
+
+| Category | Score |
+|----------|------:|
+| Performance | 95–100 |
+| Accessibility | 100 |
+| Best Practices | 100 |
+| SEO | 100 |
+
+
+
+## 📬 Contact
+
+📧 **Email** :- sarvampatel953@gmail.com
+
+💼 **LinkedIn** :- https://www.linkedin.com/in/sarvam-patel/
+
+💻 **GitHub** :- https://github.com/CoreTech7704
+
+🌐 **Portfolio** :- https://sarvam-patel.vercel.app
+
+
+## 📄 License
+
+This project is open source and available under the MIT License.
